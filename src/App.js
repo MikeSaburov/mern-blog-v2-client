@@ -1,10 +1,12 @@
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <main>
       <header>
-        <a href="">MyBlog</a>
+        <a className="logo" href="">
+          MyBlog
+        </a>
         <nav>
           <a href="">Login</a>
           <a href="">Register</a>
