@@ -4,9 +4,9 @@ export const RegisterPage = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
-  async function Register(e) {
+  function Register(e) {
     e.preventDefault();
-    await fetch('http://localhost:4000/register', {
+    fetch('http://localhost:4000/register', {
       method: 'POST',
       body: JSON.stringify({ userName, password }),
       headers: { 'Content-Type': 'application/json' },
