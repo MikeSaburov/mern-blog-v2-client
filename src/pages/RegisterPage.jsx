@@ -5,7 +5,7 @@ export const RegisterPage = () => {
     <form action="">
       <input type="text" placeholder="Введите имя пользователя" />
       <input type="password" placeholder="Введите пароль" />
-      <button>Войти</button>
+      <button>Зарегестрироваться</button>
     </form>
   );
 };
