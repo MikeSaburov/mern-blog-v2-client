@@ -11,6 +11,7 @@ export const LoginPage = () => {
       method: 'POST',
       body: JSON.stringify({ userName, password }),
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
     });
   }
   return (
