@@ -13,6 +13,7 @@ export const LoginPage = () => {
       method: 'POST',
       body: JSON.stringify({ userName, password }),
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
     });
     if (response.ok) {
       alert('Вы успешно зашли');
