@@ -19,6 +19,7 @@ export const Header = () => {
       credentials: 'include',
       method: 'POST',
     });
+    setUserName(null);
   }
 
   return (
