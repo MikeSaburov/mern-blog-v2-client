@@ -1,9 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
+  const [userName, setUserName] = useState('');
+
   useEffect(() => {
-    fetch('http://localhost:4000/profile', { credentials: 'include' });
+    fetch('http://localhost:4000/profile', { credentials: 'include' }).then(
+      (response) => {
+        response.json().then((userInfo) => {
+          setUserName(userInfo.userName);
+        });
+      }
+    );
   }, []);
 
   return (
@@ -12,8 +20,17 @@ export const Header = () => {
         MyBlog
       </Link>
       <nav>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+        {userName && (
+          <>
+            <Link to="">Создать пост</Link>
+          </>
+        )}
+        {!userName && (
+          <>
+            <Link to="/login">Войти</Link>
+            <Link to="/register">Зарегестрироваться</Link>
+          </>
+        )}
       </nav>
     </header>
   );
