@@ -30,12 +30,12 @@ export const CreatePost = () => {
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
 
-  function Create(e) {
+  function CreateNewPost(e) {
     e.preventDefault();
   }
 
   return (
-    <form className="create" onSubmit={Create}>
+    <form className="create" onSubmit={CreateNewPost}>
       <input
         type="title"
         placeholder={'Введите заголовок'}
