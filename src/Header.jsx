@@ -33,7 +33,7 @@ export const Header = () => {
       <nav>
         {username && (
           <>
-            <Link to="">Создать пост</Link>
+            <Link to="/create">Создать пост</Link>
             <a onClick={Logout}>Выйти</a>
           </>
         )}
