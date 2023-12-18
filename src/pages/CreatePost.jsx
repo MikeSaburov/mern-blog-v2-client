@@ -1,5 +1,11 @@
 import React from 'react';
 
 export const CreatePost = () => {
-  return <div>CreatePost</div>;
+  return (
+    <form className="create">
+      <input type="title" placeholder={'Введите заголовок'} />
+      <input type="summary" placeholder={'Краткое описание'} />
+      <input type="file" />
+    </form>
+  );
 };
