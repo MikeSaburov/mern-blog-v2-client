@@ -31,7 +31,7 @@ export const CreatePost = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
 
-  function CreateNewPost(e) {
+  async function CreateNewPost(e) {
     const data = new FormData();
     data.set('title', title);
     data.set('summary', summary);
@@ -40,12 +40,11 @@ export const CreatePost = () => {
     e.preventDefault();
     console.log(files);
 
-    fetch('http://localhost:4000/create', {
+    const response = await fetch('http://localhost:4000/create', {
       method: 'POST',
-      body: JSON.stringify({ title, summary, content }),
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
+      body: data,
     });
+    response.json();
   }
 
   return (
