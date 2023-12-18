@@ -8,7 +8,7 @@ export const CreatePost = () => {
       <input type="title" placeholder={'Введите заголовок'} />
       <input type="summary" placeholder={'Краткое описание'} />
       <input type="file" />
-      <ReactQuill />
+      <ReactQuill theme="snow" />
     </form>
   );
 };
