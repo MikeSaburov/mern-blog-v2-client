@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 
 export const CreatePost = () => {
   return (
@@ -6,6 +7,7 @@ export const CreatePost = () => {
       <input type="title" placeholder={'Введите заголовок'} />
       <input type="summary" placeholder={'Краткое описание'} />
       <input type="file" />
+      <ReactQuill />
     </form>
   );
 };
