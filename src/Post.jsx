@@ -1,6 +1,8 @@
 import React from 'react';
+import { format } from 'date-fns';
 
-export const Post = () => {
+import { ru } from 'date-fns/locale';
+export const Post = ({ title, summary, cover, content, createdAt }) => {
   return (
     <div className="post">
       <div className="image">
@@ -11,17 +13,14 @@ export const Post = () => {
       </div>
 
       <div className="text">
-        <h2>A comprehensive list of 2023 tech layoffs</h2>
+        <h2>{title}</h2>
         <p className="info">
           <a className="autor">Mike Saburov</a>
-          <time>15.12.2023 22:13</time>
+          <time>
+            {format(new Date(createdAt), 'd MMM YYY в HH:mm', { locale: ru })}
+          </time>
         </p>
-        <p className="summary">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit eaque
-          tempore, blanditiis totam provident sequi quod hic illo neque odio?
-          Amet et voluptatibus quae ratione perspiciatis quia facilis dolores
-          repudiandae?
-        </p>
+        <p className="summary">{summary}</p>
       </div>
     </div>
   );
