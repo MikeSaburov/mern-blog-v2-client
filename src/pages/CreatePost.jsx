@@ -45,6 +45,7 @@ export const CreatePost = () => {
     const response = await fetch('http://localhost:4000/create', {
       method: 'POST',
       body: data,
+      credentials: 'include',
     });
     if (response.ok) {
       alert('Статья успешно добавлена');
