@@ -111,3 +111,15 @@ input {
   border-radius: 5px;
   background-color: #fff;
 }
+
+.post-page {
+  .image {
+    max-height: 200px;
+    display: flex;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+}
