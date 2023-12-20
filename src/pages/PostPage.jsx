@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { format } from 'date-fns';
+import { ru } from 'date-fns/locale';
 
 export const PostPage = () => {
   const { id } = useParams();
@@ -17,7 +19,14 @@ export const PostPage = () => {
 
   return (
     <div className="post-page">
+      <time>
+        {format(new Date(postInfo.createdAt), 'd MMM YYY в HH:mm', {
+          locale: ru,
+        })}
+      </time>
       <h1>{postInfo.title}</h1>
+      <h3>{postInfo.summary}</h3>
+      <a className="autor">{postInfo.author.userName}</a>
       <div className="image">
         <img src={`http://localhost:4000/${postInfo.cover}`} alt="" />
       </div>
