@@ -11,6 +11,7 @@ export const RegisterPage = () => {
       method: 'POST',
       body: JSON.stringify({ userName, password }),
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
     });
     if (response.status === 200) {
       alert('Вы успешно зарегестрировались');

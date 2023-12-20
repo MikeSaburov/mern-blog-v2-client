@@ -6,10 +6,7 @@ export const Post = ({ title, summary, cover, content, createdAt, author }) => {
   return (
     <div className="post">
       <div className="image">
-        <img
-          src="https://techcrunch.com/wp-content/uploads/2023/11/oneplus-open.jpg"
-          alt=""
-        />
+        <img src={`http://localhost:4000/${cover}`} alt="" />
       </div>
 
       <div className="text">
