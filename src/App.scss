@@ -31,7 +31,7 @@ header {
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: #333;
   }
 
   .logo {
@@ -50,7 +50,12 @@ header {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
   margin-bottom: 30px;
-
+  .text {
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+  }
   .text h2 {
     margin: 0;
     font-size: 1.8rem;
