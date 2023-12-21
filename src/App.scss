@@ -146,10 +146,17 @@ input {
 .edit-row {
   text-align: center;
   margin-bottom: 20px;
+
+  svg {
+    height: 20px;
+  }
   .edit-btn {
-    background-color: #088804;
+    background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 15px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     border-radius: 5px;
     text-decoration: none;
   }
