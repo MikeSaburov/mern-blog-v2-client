@@ -32,8 +32,8 @@ export const PostPage = () => {
 
       {userInfo.id === postInfo.author._id && (
         <div className="edit-row">
-          <Link className="edit" to={'/edit'}>
-            Редактировать статью
+          <Link className="edit-btn" to={'/edit'}>
+            Изменить
           </Link>
         </div>
       )}
