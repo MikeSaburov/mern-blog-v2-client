@@ -123,9 +123,14 @@ input {
       object-position: center center;
     }
   }
-  a {
-    color: #333;
-    text-decoration: underline;
+
+  time {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  .author {
+    color: #777;
+    margin-bottom: 10px;
   }
   h1 {
     text-align: center;
