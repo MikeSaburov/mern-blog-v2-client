@@ -44,12 +44,27 @@ export const EditPost = () => {
     });
   }, []);
 
-  function updatePost(e) {
+  async function updatePost(e) {
     e.preventDefault();
+    const data = new FormData();
+    data.set('title', title);
+    data.set('summary', summary);
+    data.set('content', content);
+    if (files?.[0]) {
+      data.set('file', files?.[0]);
+    }
+    const response = await fetch('http://localhost:4000/post', {
+      method: 'PUT',
+      body: data,
+    });
+    if (response.ok) {
+      alert('Статья успешно добавлена');
+      setRedirect(true);
+    }
   }
 
   if (redirect) {
-    return <Navigate to={'/'} />;
+    return <Navigate to={`/post/${id}`} />;
   }
 
   return (
