@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -32,8 +33,16 @@ export const EditPost = () => {
   const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
 
+  function updatePost(e) {
+    e.preventDefault();
+  }
+
+  if (redirect) {
+    return <Navigate to={'/'} />;
+  }
+
   return (
-    <form className="create" onSubmit={EditPost}>
+    <form className="create" onSubmit={updatePost}>
       <input
         type="title"
         placeholder={'Введите заголовок'}
