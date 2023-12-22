@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -32,6 +32,17 @@ export const EditPost = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/post/${id}`).then((res) => {
+      res.json().then((postInfo) => {
+        setTitle(postInfo.title);
+        setContent(postInfo.content);
+        setSummary(postInfo.summary);
+      });
+    });
+  }, []);
 
   function updatePost(e) {
     e.preventDefault();
@@ -63,7 +74,7 @@ export const EditPost = () => {
         modules={modules}
         formats={formats}
       />
-      <button style={{ marginTop: '10px' }}>Создать пост</button>
+      <button style={{ marginTop: '10px' }}>Изменить пост</button>
     </form>
   );
 };
